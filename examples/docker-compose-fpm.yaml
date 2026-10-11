@@ -11,7 +11,7 @@ services:
     links:
       - roundcubedb
     volumes:
-      - roundcube-document-root:/var/www/html/public_html/
+      - ./data/public_html/:/var/www/html/public_html/
     environment:
       - ROUNDCUBEMAIL_DEFAULT_HOST=tls://mail.example.org
       - ROUNDCUBEMAIL_SMTP_SERVER=tls://mail.example.org
@@ -44,7 +44,7 @@ services:
       - roundcubemail
     volumes:
       - ./nginx/templates:/etc/nginx/templates
-      - roundcube-document-root:/var/www/html/public_html/
+      - ./data/public_html/:/var/www/html/public_html/
     environment:
       - NGINX_HOST=localhost  # set your local domain or your live domain
       - NGINX_PHP_CGI=roundcubemail:9000  # same as roundcubemail container name

@@ -41,7 +41,8 @@ services:
     ports:
       - 9000:9000
     volumes:
-      # The web server must use the following volume as its document root.
+      # Change "/var/www/htdocs/webmail.example.org/" to wherever you want
+      # the site's document root to be. Modify the web server config to match.
       # If using a nonroot image, the volume and the files in it must be
       # writable by the nonroot UID (82 for alpine, 33 for others).
       - /var/www/htdocs/webmail.example.org/:/var/www/html/public_html/

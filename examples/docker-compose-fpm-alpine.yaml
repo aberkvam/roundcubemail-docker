@@ -21,9 +21,6 @@ services:
     ports:
       - 9000:9000
     volumes:
-      # The web server must use the following volume as its document root.
-      # If using a nonroot image, the volume and the files in it must be
-      # writable by the nonroot UID (82 for alpine, 33 for others).
       - roundcube-document-root:/var/www/html/public_html/
     depends_on:
       - roundcubedb
